@@ -1,0 +1,28 @@
+# WordPress core (inutile de versionner)
+wordpress/wp-admin/
+wordpress/wp-includes/
+wordpress/wp-*.php
+wordpress/index.php
+wordpress/xmlrpc.php
+wordpress/license.txt
+wordpress/readme.html
+
+# Uploads (trop lourds pour Git)
+wordpress/wp-content/uploads/
+
+# Plugins/thèmes installés via composer ou manuellement
+# (garde uniquement tes plugins/thèmes custom)
+wordpress/wp-content/plugins/
+wordpress/wp-content/themes/twentytwenty*/
+wordpress/wp-content/themes/twentyone*/
+
+# Secrets
+.env
+wp-config.php
+
+# Next.js
+frontend/.next/
+frontend/node_modules/
+
+# Docker
+db_data/
