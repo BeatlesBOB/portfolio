@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
     [
-        "font-semibold",
     ],
     {
         variants: {
@@ -15,7 +14,7 @@ const buttonVariants = cva(
 
             },
             size: {
-                md: "py-2",
+                md: "",
             },
         },
         defaultVariants: {
@@ -61,12 +60,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 className={cn(buttonVariants({ variant, size }), className)}
                 {...props}
             >
-
                 {children}
-
-                {!loading && rightIcon && (
-                    <span className="shrink-0 [&>svg]:h-4 [&>svg]:w-4">{rightIcon}</span>
-                )}
             </button>
         );
     }
