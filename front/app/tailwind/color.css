@@ -1,0 +1,137 @@
+/* ============================================
+   DESIGN TOKENS
+   Organisés en couches :
+   1. Primitives  → valeurs brutes
+   2. Semantiques → intention d'usage
+   3. Component   → tokens spécifiques aux composants
+   ============================================ */
+
+@theme {
+
+   /* ------------------------------------------
+     1. PRIMITIVES
+     Valeurs brutes — jamais utilisées directement
+     dans les composants, seulement référencées
+     par les tokens sémantiques
+  ------------------------------------------ */
+
+   /* Palette de couleurs */
+   --color-deep-moss-50: #fbfaea;
+   --color-deep-moss-100: #f5f3d2;
+   --color-deep-moss-200: #eceaaa;
+   --color-deep-moss-300: #dddb79;
+   --color-deep-moss-400: #cccb4f;
+   --color-deep-moss-500: #b0b131;
+   --color-deep-moss-600: #8a8d23;
+   --color-deep-moss-700: #686c1f;
+   --color-deep-moss-800: #53561e;
+   --color-deep-moss-900: #474a1d;
+   --color-deep-moss-950: #25280b;
+
+   --color-neutral-50: #fafbf8;
+   --color-neutral-100: #f5f6f3;
+   --color-neutral-200: #e9e7e2;
+   --color-neutral-300: #dad6cd;
+   --color-neutral-400: #b0a996;
+   --color-neutral-500: #7c745e;
+   --color-neutral-600: #5e5b47;
+   --color-neutral-700: #4a4636;
+   --color-neutral-800: #2d2720;
+   --color-neutral-900: #201c13;
+   --color-neutral-950: #0e0c07;
+
+   --color-ivory-sheet-50: #fef8e7;
+   --color-ivory-sheet-100: #fcefc9;
+   --color-ivory-sheet-200: #f8dd8f;
+   --color-ivory-sheet-300: #f5c554;
+   --color-ivory-sheet-400: #f2af2d;
+   --color-ivory-sheet-500: #ec8f14;
+   --color-ivory-sheet-600: #d16b0e;
+   --color-ivory-sheet-700: #ad4a10;
+   --color-ivory-sheet-800: #8d3a13;
+   --color-ivory-sheet-900: #743013;
+   --color-ivory-sheet-950: #421706;
+
+   --color-neon-zest-50: #fbffe6;
+   --color-neon-zest-100: #f4ffc3;
+   --color-neon-zest-200: #ecff8c;
+   --color-neon-zest-300: #e3ff4a;
+   --color-neon-zest-400: #dcff10;
+   --color-neon-zest-500: #caea00;
+   --color-neon-zest-600: #afc300;
+   --color-neon-zest-700: #8e9801;
+   --color-neon-zest-800: #767a09;
+   --color-neon-zest-900: #66680d;
+   --color-neon-zest-950: #3b3c02;
+
+   --color-neon-zest-contrasted-50: #f7ffe3;
+   --color-neon-zest-contrasted-100: #eaffbc;
+   --color-neon-zest-contrasted-200: #d9ff7f;
+   --color-neon-zest-contrasted-300: #c4ff35;
+   --color-neon-zest-contrasted-400: #b8ff00;
+   --color-neon-zest-contrasted-500: #baff00;
+   --color-neon-zest-contrasted-600: #a6d900;
+   --color-neon-zest-contrasted-700: #88a900;
+   --color-neon-zest-contrasted-800: #708700;
+   --color-neon-zest-contrasted-900: #677903;
+   --color-neon-zest-contrasted-950: #384200;
+
+   --color-open-sky-50: #f0f5fd;
+   --color-open-sky-100: #e4ecfb;
+   --color-open-sky-200: #cfdcf6;
+   --color-open-sky-300: #a7bdee;
+   --color-open-sky-400: #91a5e8;
+   --color-open-sky-500: #7787dd;
+   --color-open-sky-600: #5c65cf;
+   --color-open-sky-700: #4c53b6;
+   --color-open-sky-800: #404693;
+   --color-open-sky-900: #3a4075;
+   --color-open-sky-950: #222544;
+
+   --color-open-sky-contrasted-50: #f4f7fa;
+   --color-open-sky-contrasted-100: #e6ecf3;
+   --color-open-sky-contrasted-200: #d2deeb;
+   --color-open-sky-contrasted-300: #b4c9dc;
+   --color-open-sky-contrasted-400: #8fadcb;
+   --color-open-sky-contrasted-500: #7494bd;
+   --color-open-sky-contrasted-600: #627eae;
+   --color-open-sky-contrasted-700: #546a9a;
+   --color-open-sky-contrasted-800: #4b5b82;
+   --color-open-sky-contrasted-900: #3f4c69;
+   --color-open-sky-contrasted-950: #2a3041;
+
+   --color-coral-red-50: #fef2f2;
+   --color-coral-red-100: #fee2e2;
+   --color-coral-red-200: #fecaca;
+   --color-coral-red-300: #fca5a5;
+   --color-coral-red-400: #f87171;
+   --color-coral-red-500: #ef4444;
+   --color-coral-red-600: #dc2626;
+   --color-coral-red-700: #b91c1c;
+   --color-coral-red-800: #991b1b;
+   --color-coral-red-900: #7f1d1d;
+   --color-coral-red-950: #450a0a;
+
+   /* ------------------------------------------
+     2. TOKENS SÉMANTIQUES
+     Décrivent l'intention, pas la valeur.
+     Ces tokens sont ce que tu utilises dans
+     les composants.
+  ------------------------------------------ */
+
+   --color-primary-dark: #F1E9D3;
+   --color-primary: var(--color-deep-moss-950);
+   --color-primary-light: var(--color-neutral-500);
+   --color-primary-lighter: var(--color-ivory-sheet-50);
+
+   --color-secondary: var(--color-neon-zest-400);
+   --color-secondary-dark: var(--color-neon-zest-contrasted-900);
+
+   --color-tertiary: var(--color-open-sky-300);
+   --color-tertiary-dark: var(--color-open-sky-contrasted-700);
+   --color-error: var(--color-coral-red-500);
+
+
+   /* Couleurs de texte */
+   --color-text-primary: var(--color-deep-moss-950);
+}

@@ -1,0 +1,27 @@
+@theme {
+
+   /* Typographie sémantique */
+   --font-primary: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+   --font-secondary: var(--font-unbounded),
+      ui-sans-serif,
+      system-ui,
+      sans-serif;
+
+   /* Base : Paragraphe fixe à 20px (1.25rem) */
+   --text-paragraph: clamp(1.25rem, 1.25rem + 0vw, 1.25rem);
+
+   /* Subtitle : Min 22px (1.375rem) -> Max 28px (1.75rem) [Inchangé] */
+   --text-subtitle: clamp(1.375rem, 1.25rem + 0.56vw, 1.75rem);
+
+   /* H4 : Min 26px (1.625rem) -> Max 42px (2.625rem) */
+   --text-h4: clamp(1.625rem, 1.29rem + 1.48vw, 2.625rem);
+
+   /* H3 : Min 30px (1.875rem) -> Max 63px (3.9375rem) */
+   --text-h3: clamp(1.875rem, 1.33rem + 2.44vw, 3.9375rem);
+
+   /* H2 : Min 35px (2.1875rem) -> Max 95px (5.9375rem) */
+   --text-h2: clamp(2.1875rem, 1.21rem + 4.35vw, 5.9375rem);
+
+   /* H1 : Min 42px (2.625rem) -> Max 160px (10rem) */
+   --text-h1: clamp(2.625rem, 0.77rem + 8.24vw, 10rem);
+}

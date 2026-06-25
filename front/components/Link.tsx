@@ -1,32 +1,21 @@
 import React from "react";
 import NextLink, { type LinkProps as NextLinkProps } from 'next/link'
-
-import { cva, type VariantProps } from "class-variance-authority";
-
-const linkVariants = cva(
-    [
-        "",
-    ],
-    {
-        variants: {
-            size: {
-                md: "py-2",
-            },
-        },
-        defaultVariants: {
-            size: "md",
-        },
-    }
-);
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "./Button";
+import { VariantProps } from "class-variance-authority";
 
 export interface LinkProps
-    extends NextLinkProps,
-    VariantProps<typeof linkVariants> {
-    children?: React.ReactNode
+    extends NextLinkProps, VariantProps<typeof buttonVariants> {
+    children?: React.ReactNode,
+    className?: string
 }
 
-export default function Link({ children, ...rest }: LinkProps) {
+const Link = ({ intent = 'link', className, children, ...rest }: LinkProps) => {
     return (
-        <NextLink {...rest}>{children}</NextLink>
+        <NextLink className={cn(buttonVariants({ intent }), className)} {...rest}>
+            {children}
+        </NextLink>
     )
 }
+
+export default Link

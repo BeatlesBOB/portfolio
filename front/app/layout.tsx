@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
 import { Unbounded, Sora } from "next/font/google";
-import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import ScrollSmoother from "@/components/ScrollSmoother";
+import '@/app/styles.css';
+
 
 const unbounded = Unbounded({
   variable: "--font-unbounded",
   subsets: ["latin"],
 });
 
-const sora = Unbounded({
+const sora = Sora({
   variable: "--font-sora",
   subsets: ["latin"],
 });
@@ -25,9 +29,15 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${unbounded.variable} ${sora.variable} h-full antialiased`}
+      className={`${unbounded.variable} ${sora.variable} h-full antialiased bg-primary-lighter`}
     >
-      <body className="min-h-full flex flex-col items-center justify-center">{children}</body>
+      <body className="min-h-full flex flex-col items-center justify-center">
+        <ScrollSmoother>
+          <Header />
+          {children}
+          <Footer />
+        </ScrollSmoother>
+      </body>
     </html>
   );
 }

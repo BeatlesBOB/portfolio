@@ -1,0 +1,11 @@
+/* Container Grid */
+:root {
+   --container-gutter: 64px;
+   --max-content-size: 1440px;
+
+   --content-width: min(100% - (var(--container-gutter) * 2), var(--max-content-size));
+   --side-gutter: calc((100% - var(--content-width)) / 2);
+
+   --container-grid:
+      [full-start] var(--side-gutter) [content-start] calc(var(--content-width) / 2) [mid] calc(var(--content-width) / 2) [content-end] var(--side-gutter) [full-end];
+}
