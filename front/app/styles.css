@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@import "./tailwind/globals.css";
+@import "./tailwind/color.css";
+@import "./tailwind/layout.css";
+@import "./tailwind/radius.css";
+@import "./tailwind/spacing.css";
+@import "./tailwind/typography.css";
+@import "./tailwind/utility.css";

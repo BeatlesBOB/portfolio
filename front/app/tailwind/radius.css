@@ -1,0 +1,4 @@
+@theme {
+    /* Border Radius */
+    --radius-primary: var(--radius-4xl);
+}

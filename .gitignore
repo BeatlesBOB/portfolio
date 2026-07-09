@@ -1,0 +1,32 @@
+# WordPress core (inutile de versionner)
+back/wp-admin/
+back/wp-includes/
+back/wp-*.php
+back/index.php
+back/xmlrpc.php
+back/license.txt
+back/readme.html
+
+# Uploads (trop lourds pour Git)
+back/wp-content/uploads/
+back/wp-content/upgrade/
+back/wp-content/plugins/
+back/wp-content/languages/
+back/wp-content/index.php
+
+# Plugins/thèmes installés via composer ou manuellement
+# (garde uniquement tes plugins/thèmes custom)
+back/wp-content/plugins/
+back/wp-content/themes/twentytwenty*/
+back/wp-content/themes/twentyone*/
+back/wp-content/themes/index.php
+# Secrets
+.env
+wp-config.php
+
+# Next.js
+front/.next/
+front/node_modules/
+
+# Docker
+db_data/

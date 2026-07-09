@@ -1,0 +1,51 @@
+version: "3.9"
+
+services:
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wpuser
+      MYSQL_PASSWORD: wordpress
+      MYSQL_ROOT_PASSWORD: wordpress
+    volumes:
+      - db_data:/var/lib/mysql
+
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wpuser
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - ./back:/var/www/html
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8888:80
+    environment:
+      - PMA_ARBITRARY=1
+
+  nextjs:
+    build:
+      context: ./front # dossier de ton app Next.js
+    container_name: nextjs_app
+    restart: unless-stopped
+    environment:
+      NODE_ENV: development
+    volumes:
+      - ./front:/app # hot-reload en développement
+      - /app/node_modules # évite d'écraser les node_modules du container
+      - /app/.next
+    ports:
+      - "3000:3000"
+
+volumes:
+  db_data:
