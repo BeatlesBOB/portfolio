@@ -172,15 +172,20 @@ const HomeHero = () => {
         <section onMouseMove={handleMouseMove} ref={containerRef} className='-mt-primary bg-primary-dark relative isolate'>
             <Container className='h-full grid grid-rows-[1fr_auto_1fr] min-h-[100dvh]'>
                 <Heading level='h1' className='leading-none flex flex-col justify-start row-start-2'>
-                    <span className='inline-block'>Développeur</span>
-                    <span className='inline-block relative ml-auto'>
-                        front-end
-                        <Image className='absolute top-0 -translate-y-[25%] -translate-x-[45%]' alt='' aria-hidden={true} width={130} height={118} src="/loppo/icon/allard_icon_w-bg.svg" />
+                    <span className='inline-block'>Allard</span>
+                    <span className='flex items-center flex-col-reverse sm:inline-block relative sm:ml-auto'>
+                        Nathanaël
+                        <Image className='sm:absolute left-0 top-0 size-[75px] xl:size-[100px] sm:-translate-y-[25%] sm:-translate-x-full md:-translate-x-[45%]'
+                            alt=''
+                            aria-hidden={true}
+                            width={130}
+                            height={118}
+                            src="/loppo/icon/allard_icon_w-bg.svg" />
                     </span>
                 </Heading>
                 <div className="row-start-3 flex flex-col items-start gap-y-primary self-end pb-tertiary">
                     <Paragraph className='text-h4 max-w-[800px] font-medium '>
-                        Le dev idéal pour dominer le web, petite phrase de description
+
                     </Paragraph>
                     <Paragraph className='uppercase self-center'>
                         SCROLL DOWN

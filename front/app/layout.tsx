@@ -32,8 +32,8 @@ export default function RootLayout({
       className={`${unbounded.variable} ${sora.variable} h-full antialiased bg-primary-lighter`}
     >
       <body className="min-h-full flex flex-col items-center justify-center">
+        <Header />
         <ScrollSmoother>
-          <Header />
           {children}
           <Footer />
         </ScrollSmoother>

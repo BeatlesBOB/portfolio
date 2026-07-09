@@ -10,7 +10,7 @@ interface FooterProps {
 
 const Footer = ({ }: FooterProps) => {
     return (
-        <footer className="rounded-t-primary bg-primary w-full pt-14 pb-8 mt-[275px] relative">
+        <footer className="rounded-t-primary bg-primary w-full pt-14 pb-8 mt-[275px]">
             <Container className="grid relative">
                 <Underline className='w-fit'><Heading className='text-secondary block w-max' as='span' level="h1">Travaillons <br /> Ensemble !</Heading></Underline>
                 <div className="order-none">
