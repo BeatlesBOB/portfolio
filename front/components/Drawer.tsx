@@ -12,8 +12,9 @@ export interface DrawerProps
 }
 
 
-const Drawer = ({ isOpen, className, children, setIsOpen, ...rest }: DrawerProps) => {
+const Drawer = ({ isOpen, className, children, setIsOpen, title = 'Menu', ...rest }: DrawerProps) => {
     const dialogRef = React.useRef<HTMLDialogElement>(null);
+    const titleId = React.useId();
     const [handleDisableScroll, handleEnableScroll] = useDisableScroll();
 
     React.useEffect(() => {
@@ -43,13 +44,14 @@ const Drawer = ({ isOpen, className, children, setIsOpen, ...rest }: DrawerProps
     return (
         <dialog
             ref={dialogRef}
+            aria-labelledby={titleId}
             className={cn('fixed ml-auto translate-x-full flex flex-col max-w-[calc(100%-2rem)] w-[480px] md:w-[640px] max-h-full h-full p-5 backdrop:bg-primary/50', className)}
             onClose={() => setIsOpen(false)}
             {...rest}
         >
             <div className="grid grid-cols-[auto_1fr_auto] gap-2 items-center">
-                <button onClick={() => setIsOpen(false)}>X</button>
-                <span>Drawer Content</span>
+                <button type="button" aria-label="Fermer" onClick={() => setIsOpen(false)}>X</button>
+                <span id={titleId}>{title}</span>
             </div>
             <div className="grow grid place-items-center">
                 {children}

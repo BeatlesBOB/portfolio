@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(php -v)",
+      "Bash(git check-ignore *)",
+      "Bash(node -e \"console.log\\(require.resolve\\('lightningcss-win32-x64-msvc'\\)\\)\")",
+      "Bash(node -e \"require\\('lightningcss-win32-x64-msvc'\\); console.log\\('ok'\\)\")"
+    ]
+  }
+}

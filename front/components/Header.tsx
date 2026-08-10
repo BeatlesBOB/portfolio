@@ -9,6 +9,7 @@ import Drawer from './Drawer';
 
 const Header = () => {
     const [isOpen, setIsOpen] = React.useState(false);
+    const drawerId = React.useId();
 
     const handleDrawerState = (status: boolean) => {
         setIsOpen(status);
@@ -18,8 +19,16 @@ const Header = () => {
         <header className={cn('w-full z-10 fixed top-6')}>
             <Container className='bg-[#FFFBF0] py-4 px-8 rounded-primary flex justify-between'>
                 <Logo />
-                <button onClick={() => setIsOpen(true)} className='lg:hidden'>Menu</button>
-                <nav className='hidden lg:flex'>
+                <button
+                    onClick={() => setIsOpen(true)}
+                    className='lg:hidden'
+                    aria-haspopup="dialog"
+                    aria-expanded={isOpen}
+                    aria-controls={drawerId}
+                >
+                    Menu
+                </button>
+                <nav className='hidden lg:flex' aria-label="Navigation principale">
                     <ul className='flex gap-x-8 items-center'>
                         <li>
                             <Link href="">À propos</Link>
@@ -32,8 +41,8 @@ const Header = () => {
                         </li>
                     </ul>
                 </nav>
-                <Drawer isOpen={isOpen} setIsOpen={handleDrawerState} className='lg:hidden'>
-                    <nav className='flex flex-col justify-center h-full'>
+                <Drawer id={drawerId} title="Menu de navigation" isOpen={isOpen} setIsOpen={handleDrawerState} className='lg:hidden'>
+                    <nav className='flex flex-col justify-center h-full' aria-label="Navigation principale">
                         <ul className='flex flex-col gap-8 items-center'>
                             <li>
                                 <Link href="">À propos</Link>

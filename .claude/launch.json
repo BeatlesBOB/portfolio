@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "front-dev",
+      "runtimeExecutable": "cmd.exe",
+      "runtimeArgs": ["/c", "cd /d C:\\Users\\nath\\projects\\portfolio\\front && node node_modules\\next\\dist\\bin\\next dev --port 3000"],
+      "port": 3000
+    }
+  ]
+}
